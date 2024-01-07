@@ -1,11 +1,11 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import Particle from "../Particle";
-import Github from "./Github";
-import Techstack from "./Techstack/Techstack";
-import Aboutcard from "./AboutCard";
+import Particle from "../Particle/Particle";
+import Github from "../Github/Github";
+import Techstack from "../Techstack/Techstack";
+import Aboutcard from "../AboutCard/AboutCard";
 import laptopImg from "../../Assets/about.png";
-import Toolstack from "./ToolStack/Toolstack";
+import Toolstack from "../ToolStack/Toolstack";
 
 function About() {
   return (

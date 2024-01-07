@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
-import logo from "../Assets/logo.png";
+import logo from "../../Assets/logo.png";
 import { Link } from "react-router-dom";
 import {
   AiOutlineHome,
@@ -35,11 +35,7 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          <img
-            src={logo}
-            className="img-fluid logo"
-            alt="brand"
-          />
+          <img src={logo} className="img-fluid logo" alt="brand" />
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -60,12 +56,6 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link as={Link} to="/about" onClick={() => isExpand(false)}>
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
               <Nav.Link as={Link} to="/project" onClick={() => isExpand(false)}>
                 <AiOutlineFundProjectionScreen
                   style={{ marginBottom: "2px" }}
@@ -77,6 +67,12 @@ function NavBar() {
             <Nav.Item>
               <Nav.Link as={Link} to="/resume" onClick={() => isExpand(false)}>
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link as={Link} to="/about" onClick={() => isExpand(false)}>
+                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>
             </Nav.Item>
 
