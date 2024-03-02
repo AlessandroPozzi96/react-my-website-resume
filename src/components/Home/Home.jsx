@@ -3,9 +3,16 @@ import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle/Particle";
 import Home2 from "./Home2";
-import Type from "./Type";
+import { HomeDescription } from "components/HomeDescription/HomeDescription";
 
 function Home() {
+  const skills = [
+    "Software Developer",
+    "Analyst machin chose",
+    "Trouver une autre compétence",
+    "Si possible encore une",
+  ];
+
   return (
     <section>
       <Container fluid className="home-section" id="home">
@@ -22,12 +29,10 @@ function Home() {
 
               <h1 className="heading-name">
                 I'M
-                <strong className="main-name"> ALESSANDRO POZZI</strong>
+                <strong className="main-name"> Alessandro Pozzi</strong>
               </h1>
 
-              <div style={{ padding: 50, textAlign: "left" }}>
-                <Type />
-              </div>
+              <HomeDescription description={skills} />
             </Col>
 
             <Col md={5} style={{ paddingBottom: 20 }}>
