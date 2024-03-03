@@ -2,15 +2,17 @@ import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle/Particle";
-import Home2 from "./Home2";
 import { HomeDescription } from "components/HomeDescription/HomeDescription";
+import myImg from "../../Assets/Avatar.jpg";
+import Tilt from "react-parallax-tilt";
+import { SocialIcons } from "components/SocialIcons/SocialIcons";
 
 function Home() {
   const skills = [
     "Software Developer",
-    "Analyst machin chose",
-    "Trouver une autre compétence",
-    "Si possible encore une",
+    "Master's degree in Computer Science",
+    "Always motivated and passionate",
+    "Continuous learner",
   ];
 
   return (
@@ -47,7 +49,49 @@ function Home() {
         </Container>
       </Container>
 
-      <Home2 />
+      <Container fluid className="home-about-section" id="about">
+        <Container>
+          <Row>
+            <Col md={8} className="home-about-description">
+              <h1 style={{ fontSize: "2.6em" }}>
+                LET ME <span className="purple"> INTRODUCE </span> MYSELF
+              </h1>
+              <p className="home-about-body">
+                Since i was a teenager i love the computer word! Whether it's
+                the hardware or the software, I always enjoy finding solutions.
+                <br />
+                <br />I am fluent in classics like
+                <i>
+                  <b className="purple"> C#, Java, HTML, CSS, JavaScript, etc. </b>
+                </i>
+                <br />
+                <br />
+                My area of expertise is currently building &nbsp;
+                <i>
+                  <b className="purple">.NET applications </b>
+                </i>
+                <br />
+                <br />
+                
+              </p>
+            </Col>
+            <Col md={4} className="myAvtar">
+              <Tilt>
+                <img src={myImg} className="img-fluid" alt="avatar" />
+              </Tilt>
+            </Col>
+          </Row>
+          <Row>
+            <Col md={12} className="home-about-social">
+              <h1>FIND ME ON</h1>
+              <p>
+                Feel free to <span className="purple">connect </span>with me
+              </p>
+              <SocialIcons isFooter={false} />
+            </Col>
+          </Row>
+        </Container>
+      </Container>
     </section>
   );
 }
