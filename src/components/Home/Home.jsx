@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import homeLogo from "../../Assets/home-main.svg";
 import Particle from "../Particle/Particle";
 import { HomeDescription } from "components/HomeDescription/HomeDescription";
-import myImg from "../../Assets/Avatar.jpg";
+import myImg from "../../Assets/AvatarArrondi.png";
 import Tilt from "react-parallax-tilt";
 import { SocialIcons } from "components/SocialIcons/SocialIcons";
 
@@ -57,22 +57,46 @@ function Home() {
                 LET ME <span className="purple"> INTRODUCE </span> MYSELF
               </h1>
               <p className="home-about-body">
-                Since i was a teenager i love the computer word! Whether it's
-                the hardware or the software, I always enjoy finding solutions.
-                <br />
-                <br />I am fluent in classics like
+                Hello! I'm a Computer Science enthusiast holding a&nbsp;
                 <i>
-                  <b className="purple"> C#, Java, HTML, CSS, JavaScript, etc. </b>
+                  <b className="purple">Master's degree</b>{" "}
                 </i>
-                <br />
-                <br />
-                My area of expertise is currently building &nbsp;
+                from the University of Namur and a&nbsp;
                 <i>
-                  <b className="purple">.NET applications </b>
+                  <b className="purple">Bachelor's degree</b>{" "}
                 </i>
+                from Hénallux. Currently, i work as a&nbsp;
+                <i>
+                  <b className="purple">.NET developer</b>
+                </i>
+                , but I also enjoy exploring other languages like Java and
+                JavaScript.
                 <br />
                 <br />
-                
+                Originally from&nbsp;
+                <i>
+                  <b className="purple">Belgium</b>
+                </i>
+                , I speak French and English. Besides coding, i love spending
+                time outdoors, especially trekking in nature. During the
+                pandemic, i picked up playing the piano, which has become a
+                source of joy for me.
+                <br />
+                <br />
+                I'm also fascinated by&nbsp;
+                <i>
+                  <b className="purple">blockchain</b>{" "}
+                </i>
+                technology and other new tech trends. With a down-to-earth
+                attitude, i'm always eager to&nbsp;
+                <i>
+                  <b className="purple">learn</b>{" "}
+                </i>
+                and&nbsp;
+                <i>
+                  <b className="purple">grow</b>{" "}
+                </i>
+                both personally and professionally.
               </p>
             </Col>
             <Col md={4} className="myAvtar">
