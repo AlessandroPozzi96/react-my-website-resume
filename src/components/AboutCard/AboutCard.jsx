@@ -1,45 +1,40 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
-import { ImPointRight } from "react-icons/im";
 
 function AboutCard() {
   return (
-    <Card className="quote-card-view">
-      <Card.Body>
-        <blockquote className="blockquote mb-0">
-          <p style={{ textAlign: "justify" }}>
-            Hi Everyone, I am <span className="purple">Alessandro Pozzi </span>
-            from <span className="purple"> Aubange, Belgium.</span>
-            <br />
-            I am currently employed as a software developer at Silicon DNA.
-            <br />
-            Other information...
-            <br/>
-            bla bla bla..
-            <br />
-            <br />
+    <div>
+      <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
+        Know Who <strong className="purple">I'M</strong>
+      </h1>
+      <Card className="quote-card-view">
+        <Card.Body>
+          <blockquote className="blockquote mb-0">
+            <p style={{ textAlign: "justify" }}>
+              With a background spanning both <i className="purple">academic</i>{" "}
+              and <i className="purple">professional</i> spheres, I've dabbled
+              in a multitude of technologies, completed numerous projects and
+              absorbed a wealth of knowledge along the way.
+              <br />
+              <br />
+              Whether tackling complex programming tasks or developing{" "}
+              <i className="purple">innovative</i> solutions, I bring a
+              versatile skill set and a passion for continuous learning to every
+              project. Let's <i className="purple">collaborate</i> and{" "}
+              <i className="purple">create</i> something remarkable together!
+            </p>
 
-            Apart from coding, some other activities that I love to do!
-          </p>
-          <ul>
-            <li className="about-activity">
-              <ImPointRight /> Playing Games
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs
-            </li>
-            <li className="about-activity">
-              <ImPointRight /> Travelling
-            </li>
-          </ul>
-
-          <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
-          </p>
-          <footer className="blockquote-footer">Soumyajit</footer>
-        </blockquote>
-      </Card.Body>
-    </Card>
+            <p style={{ color: "rgb(155 126 172)" }}>
+              <i>
+                "Creativity is thinking up new things. Innovation is doing new
+                things."
+              </i>{" "}
+            </p>
+            <footer className="blockquote-footer">Theodore Levitt</footer>
+          </blockquote>
+        </Card.Body>
+      </Card>
+    </div>
   );
 }
 

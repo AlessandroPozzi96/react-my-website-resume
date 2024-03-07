@@ -65,21 +65,21 @@ function Home() {
                 <i>
                   <b className="purple">Bachelor's degree</b>{" "}
                 </i>
-                from Hénallux. Currently, i work as a&nbsp;
+                from Hénallux. Currently, I work as a&nbsp;
                 <i>
                   <b className="purple">.NET developer</b>
                 </i>
-                , but I also enjoy exploring other languages like Java and
-                JavaScript.
+                , but I also enjoy exploring other fields like Java, React,
+                JavaScript, etc.
                 <br />
                 <br />
                 Originally from&nbsp;
                 <i>
                   <b className="purple">Belgium</b>
                 </i>
-                , I speak French and English. Besides coding, i love spending
+                , I speak French and English. Besides coding, I love spending
                 time outdoors, especially trekking in nature. During the
-                pandemic, i picked up playing the piano, which has become a
+                pandemic, I picked up playing the piano, which has become a
                 source of joy for me.
                 <br />
                 <br />
@@ -88,7 +88,7 @@ function Home() {
                   <b className="purple">blockchain</b>{" "}
                 </i>
                 technology and other new tech trends. With a down-to-earth
-                attitude, i'm always eager to&nbsp;
+                attitude, I'm always eager to&nbsp;
                 <i>
                   <b className="purple">learn</b>{" "}
                 </i>
