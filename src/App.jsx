@@ -3,7 +3,6 @@ import Preloader from "./components/Pre/Pre";
 import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
-import Projects from "./components/Projects/Projects";
 import Footer from "./components/Footer/Footer";
 import Resume from "./components/Resume/ResumeNew";
 import {
@@ -16,6 +15,7 @@ import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Skills from "components/Skills/Skills";
 
 function App() {
   const [load, isLoad] = useState(true);
@@ -36,7 +36,8 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/project" element={<Projects />} />
+          {/* <Route path="/project" element={<Projects />} /> */}
+          <Route path="/skills" element={<Skills />} />
           <Route path="/about" element={<About />} />
           <Route path="/resume" element={<Resume />} />
           <Route path="*" element={<Navigate to="/" />} />

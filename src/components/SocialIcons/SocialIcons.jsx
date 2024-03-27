@@ -1,3 +1,4 @@
+import s from "./style.module.css";
 import {
   AiFillGithub,
   AiOutlineTwitter,
@@ -19,7 +20,7 @@ export function SocialIcons({ isFooter }) {
   ];
 
   return (
-    <ul className={isFooter ? "footer-icons" : "home-about-social-links"}>
+    <ul className={isFooter ? s.footerIcons : s.homeAboutSocialLinks}>
       {iconsData.map((item, index) => (
         <SocialIcon
           key={index}
