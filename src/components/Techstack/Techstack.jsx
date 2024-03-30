@@ -8,7 +8,12 @@ import {
   DiGit,
   DiJava,
 } from "react-icons/di";
-import { SiSolidity, SiDotnet, SiCsharp, SiMicrosoftsqlserver  } from "react-icons/si";
+import {
+  SiSolidity,
+  SiDotnet,
+  SiCsharp,
+  SiMicrosoftsqlserver,
+} from "react-icons/si";
 import { FaLinux, FaNetworkWired } from "react-icons/fa";
 import { GrDocker } from "react-icons/gr";
 
@@ -20,40 +25,40 @@ function Techstack() {
       </h1>
       <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
         <Col xs={4} md={2} className={s.techIcons}>
-          <SiDotnet />
+          <SiDotnet title=".NET" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <DiJavascript1 />
+          <DiJavascript1 title="Javascript" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <DiNodejs />
+          <DiNodejs title="NodeJS" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <DiReact />
+          <DiReact title="React" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <SiMicrosoftsqlserver />
+          <SiMicrosoftsqlserver title="Microsoft SQL Server" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <SiSolidity />
+          <SiSolidity title="Solidity" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <DiGit />
+          <DiGit title="Git" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <GrDocker />
+          <GrDocker title="Docker" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <DiJava />
+          <DiJava title="Java" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <FaLinux />
+          <FaLinux title="Linux" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <SiCsharp />
+          <SiCsharp title="CSharp" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <FaNetworkWired />
+          <FaNetworkWired title="General network knowlege" />
         </Col>
       </Row>
     </div>

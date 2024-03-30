@@ -7,7 +7,7 @@ import {
   SiVercel,
   SiIntellijidea,
   SiVmware,
-  SiUdemy 
+  SiUdemy,
 } from "react-icons/si";
 import { TbBrandVisualStudio } from "react-icons/tb";
 
@@ -18,26 +18,26 @@ function Toolstack() {
         <strong className="purple">Tools</strong> I use
       </h1>
       <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
-        <Col xs={4} md={2} className={s.techIcons}>
+        <Col xs={4} md={2} className={s.techIcons} title="Visual Studio Code">
           <SiVisualstudiocode />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <SiVmware />
+          <SiVmware title="VMWare" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <SiPostman />
+          <SiPostman title="Postman" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <SiVercel />
+          <SiVercel title="Vercel" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <TbBrandVisualStudio />
+          <TbBrandVisualStudio title="Visual Studio" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <SiUdemy />
+          <SiUdemy title="Udemy" />
         </Col>
         <Col xs={4} md={2} className={s.techIcons}>
-          <SiIntellijidea />
+          <SiIntellijidea title="Intelliji" />
         </Col>
       </Row>
     </div>
