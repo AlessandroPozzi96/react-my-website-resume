@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle/Particle";
 import Github from "../Github/Github";
 import Aboutcard from "../AboutCard/AboutCard";
-import laptopImg from "../../Assets/about.png";
+import laptopImg from "../../Assets/ManOnDesk.png";
 
 function About() {
   return (
@@ -23,7 +23,11 @@ function About() {
           </Col>
           <Col
             md={5}
-            style={{ paddingTop: "120px", paddingBottom: "50px" }}
+            style={{
+              paddingTop: "20px",
+              paddingBottom: "50px",
+              paddingLeft: "20px",
+            }}
             className="about-img"
           >
             <img src={laptopImg} alt="about" className="img-fluid" />

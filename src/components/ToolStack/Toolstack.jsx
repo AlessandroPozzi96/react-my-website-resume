@@ -19,24 +19,24 @@ function Toolstack() {
       </h1>
       <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
         <Col xs={4} md={2} className={s.techIcons} title="Visual Studio Code">
-          <SiVisualstudiocode />
+          <SiVisualstudiocode title="Visual Studio Code" />
         </Col>
-        <Col xs={4} md={2} className={s.techIcons}>
+        <Col xs={4} md={2} className={s.techIcons} title="VMWare">
           <SiVmware title="VMWare" />
         </Col>
-        <Col xs={4} md={2} className={s.techIcons}>
+        <Col xs={4} md={2} className={s.techIcons} title="Postman">
           <SiPostman title="Postman" />
         </Col>
-        <Col xs={4} md={2} className={s.techIcons}>
+        <Col xs={4} md={2} className={s.techIcons} title="Vercel">
           <SiVercel title="Vercel" />
         </Col>
-        <Col xs={4} md={2} className={s.techIcons}>
+        <Col xs={4} md={2} className={s.techIcons} title="Visual Studio">
           <TbBrandVisualStudio title="Visual Studio" />
         </Col>
-        <Col xs={4} md={2} className={s.techIcons}>
+        <Col xs={4} md={2} className={s.techIcons} title="Udemy">
           <SiUdemy title="Udemy" />
         </Col>
-        <Col xs={4} md={2} className={s.techIcons}>
+        <Col xs={4} md={2} className={s.techIcons} title="Intelliji">
           <SiIntellijidea title="Intelliji" />
         </Col>
       </Row>

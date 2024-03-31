@@ -1,6 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import homeLogo from "../../Assets/home-main.svg";
+
+import homeLogoCodingGuy from "../../Assets/CodingGuy.png";
 import Particle from "../Particle/Particle";
 import { HomeDescription } from "components/HomeDescription/HomeDescription";
 import myImg from "../../Assets/AvatarArrondi.png";
@@ -39,7 +40,7 @@ function Home() {
 
             <Col md={5} style={{ paddingBottom: 20 }}>
               <img
-                src={homeLogo}
+                src={homeLogoCodingGuy}
                 alt="home pic"
                 className="img-fluid"
                 style={{ maxHeight: "450px" }}
@@ -99,7 +100,13 @@ function Home() {
                 both personally and professionally.
               </p>
             </Col>
-            <Col md={4} className="myAvtar">
+            <Col
+              md={4}
+              className="myAvtar"
+              style={{
+                paddingLeft: "20px",
+              }}
+            >
               <Tilt>
                 <img src={myImg} className="img-fluid" alt="avatar" />
               </Tilt>
