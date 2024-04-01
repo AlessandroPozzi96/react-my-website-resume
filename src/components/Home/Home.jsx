@@ -1,12 +1,12 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-
 import homeLogoCodingGuy from "../../Assets/CodingGuy.png";
 import Particle from "../Particle/Particle";
 import { HomeDescription } from "components/HomeDescription/HomeDescription";
 import myImg from "../../Assets/AvatarArrondi.png";
 import Tilt from "react-parallax-tilt";
 import { SocialIcons } from "components/SocialIcons/SocialIcons";
+import s from "./style.module.css";
 
 function Home() {
   const skills = [
@@ -38,7 +38,7 @@ function Home() {
               <HomeDescription description={skills} />
             </Col>
 
-            <Col md={5} style={{ paddingBottom: 20 }}>
+            <Col md={5} style={{ paddingBottom: 20 }} className={s.HomeLogoCol}>
               <img
                 src={homeLogoCodingGuy}
                 alt="home pic"
@@ -102,7 +102,7 @@ function Home() {
             </Col>
             <Col
               md={4}
-              className="myAvtar"
+              className="myAvatar"
               style={{
                 paddingLeft: "20px",
               }}

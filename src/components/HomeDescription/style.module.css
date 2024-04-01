@@ -3,3 +3,10 @@
     padding-left: 45px;
     text-align: left;
 }
+
+@media (max-width: 767px) {
+    .container
+    {
+        background-color: red;
+    }
+}

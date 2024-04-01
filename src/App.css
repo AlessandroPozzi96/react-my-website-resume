@@ -4,6 +4,13 @@
   min-height: calc(100vh - (10px + 8px));
 }
 
+@media (max-width: 767px) {
+  .App
+  {
+    padding-bottom: 150px;
+  }
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
