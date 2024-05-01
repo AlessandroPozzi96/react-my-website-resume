@@ -20,15 +20,10 @@ function ResumeNew() {
       <Container fluid className="resume-section">
         <Particle />
         <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            style={{ maxWidth: "250px" }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
+          <h1 className="heading">
+            <span className="purple">Read</span> and{" "}
+            <span className="purple">download</span> my resume
+          </h1>
         </Row>
 
         <Row className="resume">
