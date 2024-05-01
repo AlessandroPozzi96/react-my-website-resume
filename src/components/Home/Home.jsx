@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import homeLogoCodingGuy from "../../Assets/CodingGuy.png";
 import Particle from "../Particle/Particle";
 import { HomeDescription } from "components/HomeDescription/HomeDescription";
-import myImg from "../../Assets/AvatarArrondi.png";
+import myImg from "../../Assets/HommeAffaireArrondi.png";
 import Tilt from "react-parallax-tilt";
 import { SocialIcons } from "components/SocialIcons/SocialIcons";
 import s from "./style.module.css";
