@@ -79,6 +79,12 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
+              <Nav.Link as={Link} to="/portfolio" onClick={() => isExpand(false)}>
+                <CgFileDocument style={{ marginBottom: "2px" }} /> Portfolio
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
               <Nav.Link as={Link} to="/about" onClick={() => isExpand(false)}>
                 <AiOutlineUser style={{ marginBottom: "2px" }} /> About
               </Nav.Link>

@@ -4,7 +4,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
-import Resume from "./components/Resume/ResumeNew";
+//import Resume from "./components/Resume/ResumeNew";
+import PDFViewerCard from "./components/PDFViewerCard/PDFViewerCard";
 import {
   BrowserRouter as Router,
   Route,
@@ -16,6 +17,8 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Skills from "components/Skills/Skills";
+import PortfolioPDF from "./Assets/Portfolio.pdf";
+import ResumePDF from "./Assets/CV_AlessandroPozzi.pdf";
 
 function App() {
   const [load, isLoad] = useState(true);
@@ -23,7 +26,7 @@ function App() {
   useEffect(() => {
     const timer = setTimeout(() => {
       isLoad(false);
-    }, 1200);
+    }, 1500);
 
     return () => clearTimeout(timer);
   }, []);
@@ -39,7 +42,16 @@ function App() {
           {/* <Route path="/project" element={<Projects />} /> */}
           <Route path="/skills" element={<Skills />} />
           <Route path="/about" element={<About />} />
-          <Route path="/resume" element={<Resume />} />
+          <Route
+            path="/resume"
+            element={<PDFViewerCard PDFFile={ResumePDF} title={"Resume"} />}
+          />
+          <Route
+            path="/portfolio"
+            element={
+              <PDFViewerCard PDFFile={PortfolioPDF} title={"Portfolio"} />
+            }
+          />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>
         <Footer />
