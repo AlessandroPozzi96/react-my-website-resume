@@ -1,3 +1,5 @@
+import s from "./style.module.css"
+
 import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
@@ -5,17 +7,25 @@ import Particle from "../Particle/Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
 function PDFViewerCard({ PDFFile, title }) {
   const [width, setWidth] = useState(1200);
+  const [numPages, setNumPages] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     setWidth(window.innerWidth);
   }, []);
 
+  const onDocumentLoadSuccess = ({ numPages }) => {
+    setNumPages(numPages);
+  };
+
   const handleError = (error) => {
     console.error("Error loading PDF:", error);
+    setError(error.message);
   };
 
   return (
@@ -30,14 +40,26 @@ function PDFViewerCard({ PDFFile, title }) {
         </Row>
 
         <Row className="resume">
+          {error && <div className="alert alert-danger">{error}</div>}
           <Document
             file={PDFFile}
-            className="d-flex justify-content-center"
             key={PDFFile}
-            onLoadError={handleError} // Add error handling
-            onSourceError={handleError} // Add error handling
+            onLoadSuccess={onDocumentLoadSuccess}
+            onLoadError={handleError}
+            onSourceError={handleError}
+            className={s.pdfDocument}
           >
-            <Page pageNumber={1} scale={width > 786 ? 1.7 : 0.6} />
+            {Array.from(
+              new Array(numPages),
+              (el, index) => (
+                <Page
+                  key={`page_${index + 1}`}
+                  pageNumber={index + 1}
+                  scale={width > 786 ? 1.7 : 0.6}
+                  className={s.pdfPage}
+                />
+              )
+            )}
           </Document>
         </Row>
 
