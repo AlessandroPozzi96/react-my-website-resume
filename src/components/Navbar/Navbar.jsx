@@ -7,6 +7,8 @@ import {
   AiOutlineHome,
   AiOutlineFundProjectionScreen,
   AiOutlineUser,
+  AiOutlineFolderOpen,
+  AiOutlineIdcard,
 } from "react-icons/ai";
 
 import { CgFileDocument } from "react-icons/cg";
@@ -54,14 +56,14 @@ function NavBar() {
               </Nav.Link>
             </Nav.Item>
 
-            {/* <Nav.Item>
-              <Nav.Link as={Link} to="/project" onClick={() => isExpand(false)}>
-                <AiOutlineFundProjectionScreen
+            <Nav.Item>
+              <Nav.Link as={Link} to="/projects" onClick={() => isExpand(false)}>
+                <AiOutlineFolderOpen  
                   style={{ marginBottom: "2px" }}
                 />{" "}
                 Projects
               </Nav.Link>
-            </Nav.Item> */}
+            </Nav.Item>
 
             <Nav.Item>
               <Nav.Link as={Link} to="/skills" onClick={() => isExpand(false)}>
@@ -74,7 +76,7 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link as={Link} to="/resume" onClick={() => isExpand(false)}>
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Resume
+                <AiOutlineIdcard  style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
             </Nav.Item>
 

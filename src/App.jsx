@@ -19,6 +19,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import Skills from "components/Skills/Skills";
 import PortfolioPDF from "./Assets/Portfolio.pdf";
 import ResumePDF from "./Assets/CV_AlessandroPozzi.pdf";
+import Projects from "components/Projects/Projects";
 
 function App() {
   const [load, isLoad] = useState(true);
@@ -39,7 +40,7 @@ function App() {
         <ScrollToTop />
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/project" element={<Projects />} /> */}
+          <Route path="/projects" element={<Projects />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/about" element={<About />} />
           <Route
