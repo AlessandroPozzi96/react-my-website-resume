@@ -36,7 +36,7 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          <div>My Website Resume</div>
+          <div>Alessandro Pozzi's Resume Website</div>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -57,11 +57,12 @@ function NavBar() {
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link as={Link} to="/projects" onClick={() => isExpand(false)}>
-                <AiOutlineFolderOpen  
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                Projects
+              <Nav.Link
+                as={Link}
+                to="/projects"
+                onClick={() => isExpand(false)}
+              >
+                <AiOutlineFolderOpen style={{ marginBottom: "2px" }} /> Projects
               </Nav.Link>
             </Nav.Item>
 
@@ -76,12 +77,16 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link as={Link} to="/resume" onClick={() => isExpand(false)}>
-                <AiOutlineIdcard  style={{ marginBottom: "2px" }} /> Resume
+                <AiOutlineIdcard style={{ marginBottom: "2px" }} /> Resume
               </Nav.Link>
             </Nav.Item>
 
             <Nav.Item>
-              <Nav.Link as={Link} to="/portfolio" onClick={() => isExpand(false)}>
+              <Nav.Link
+                as={Link}
+                to="/portfolio"
+                onClick={() => isExpand(false)}
+              >
                 <CgFileDocument style={{ marginBottom: "2px" }} /> Portfolio
               </Nav.Link>
             </Nav.Item>
