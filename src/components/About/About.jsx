@@ -3,7 +3,8 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle/Particle";
 import Github from "../Github/Github";
 import Aboutcard from "../AboutCard/AboutCard";
-import laptopImg from "../../Assets/ManOnDesk.png";
+import Avatar from "../../Assets/AvatarArrondi.png";
+import Tilt from "react-parallax-tilt";
 
 function About() {
   return (
@@ -30,7 +31,9 @@ function About() {
             }}
             className="about-img"
           >
-            <img src={laptopImg} alt="about" className="img-fluid" />
+            <Tilt>
+              <img src={Avatar} className="img-fluid" alt="about" />
+            </Tilt>
           </Col>
         </Row>
 
