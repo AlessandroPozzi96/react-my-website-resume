@@ -1,3 +1,5 @@
+import s from "./style.module.css";
+
 import React from "react";
 import Particles from "react-tsparticles";
 
@@ -5,6 +7,7 @@ function Particle() {
   return (
     <Particles
       id="tsparticles"
+      className={s.particlesBackground}
       params={{
         particles: {
           number: {
