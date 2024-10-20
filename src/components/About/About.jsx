@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import Particle from "../Particle/Particle";
 import Github from "../Github/Github";
 import Aboutcard from "../AboutCard/AboutCard";
-import Avatar from "../../Assets/AvatarArrondi.png";
+import Avatar from "../../Assets/AvatarArrondi2.png";
 import Tilt from "react-parallax-tilt";
 
 function About() {

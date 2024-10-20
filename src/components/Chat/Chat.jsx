@@ -5,7 +5,7 @@ import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { Constants } from "Constants/Constants";
-/* import Particle from "../Particle/Particle"; */
+import Particle from "../Particle/Particle";
 
 export function Chat() {
   const [prompt, setPrompt] = useState("");
@@ -19,8 +19,10 @@ export function Chat() {
   const handleSend = async (e) => {
     e.preventDefault(); // Prevent form submission and page refresh
 
+    const currentYear = new Date().getFullYear();
+
     const summary = `
-You're an assistant in charge of answering recruiters' questions. My name is Alessandro Pozzi, born in 1996, speak French, live in Belgium and i made this website. I am a software developer with expertise in front-end and back-end technologies, including .NET, Java, React, SQL, HTML/CSS, and JavaScript. I have experience in web and mobile app development and am committed to continuous learning. I studied Computer Management at Haute-École Hénallux and furthered my training at the University of Namur. Be consistent, logical and check your answers. We're currently in 2024.
+You're an assistant in charge of answering recruiters' questions. My name is Alessandro Pozzi, born in 1996, speak French, live in Belgium and i made this website. I am a software developer with expertise in front-end and back-end technologies, including .NET, Java, React, SQL, HTML/CSS, and JavaScript. I have experience in web and mobile app development and am committed to continuous learning. I studied Computer Management at Haute-École Hénallux and furthered my training at the University of Namur. Be consistent, logical and check your answers. We're currently in ${currentYear}.
 `;
 
     const data = {
@@ -60,13 +62,14 @@ You're an assistant in charge of answering recruiters' questions. My name is Ale
   return (
     <div>
       <Container fluid className="resume-section">
+        <Particle />
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <h1 className="heading">
             Chat with <strong className="purple">OpenAI</strong> Platform
           </h1>
         </Row>
 
-        <Row className="resume">
+        <Row className="resume" style={{ zIndex: 1, position: "relative" }}>
           <textarea
             className={s.Prompt}
             value={prompt}

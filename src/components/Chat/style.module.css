@@ -12,6 +12,7 @@
     background-color: #f7f7f7; /* Light background color */
     color: #333;               /* Text color */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+    overflow: auto; /* Make sure scrolling is enabled */
 }
 
 .Response
@@ -25,7 +26,16 @@
     background-color: #e9ecef; /* Light gray background for differentiation */
     color: #333;               /* Text color */
     overflow-y: auto;          /* Allows vertical scrolling if content overflows */
-    white-space: pre-wrap;     /* Preserves line breaks in the response */
     margin-bottom: 20px;       /* Adds space between the response and other elements */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Shadow for aesthetics */
+    overflow: auto; /* Enable scrolling */
+    white-space: pre-wrap; /* Preserve new lines in the response */
+    word-wrap: break-word; /* Ensure long words break correctly */
+    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
 }
+
+textarea {
+    height: auto;
+    min-height: 150px; /* Set a minimum height */
+    max-height: 400px; /* Set a maximum height for scrolling */
+  }
