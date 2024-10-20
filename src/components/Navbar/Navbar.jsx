@@ -9,7 +9,9 @@ import {
   AiOutlineUser,
   AiOutlineFolderOpen,
   AiOutlineIdcard,
+  AiOutlineReload,
 } from "react-icons/ai";
+import { IoChatbubbleEllipsesOutline } from "react-icons/io5";
 
 import { CgFileDocument } from "react-icons/cg";
 
@@ -36,7 +38,7 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-          <div>Alessandro Pozzi's Resume Website</div>
+        <div ><AiOutlineReload style={{ marginBottom: "2px" }} /> Refresh</div>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -72,6 +74,15 @@ function NavBar() {
                   style={{ marginBottom: "2px" }}
                 />{" "}
                 Skills
+              </Nav.Link>
+            </Nav.Item>
+
+            <Nav.Item>
+              <Nav.Link as={Link} to="/chat" onClick={() => isExpand(false)}>
+                <IoChatbubbleEllipsesOutline
+                  style={{ marginBottom: "2px" }}
+                />{" "}
+                Chat
               </Nav.Link>
             </Nav.Item>
 

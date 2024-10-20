@@ -7,6 +7,7 @@ import {
 import { FaLinkedinIn } from "react-icons/fa";
 import { Constants } from "Constants/Constants";
 import { SocialIcon } from "components/SocialIcon/SocialIcon";
+import React from "react";
 
 export function SocialIcons({ isFooter }) {
   const style = isFooter ? { color: "white" } : {};

@@ -1,0 +1,31 @@
+.Prompt
+{
+    width: 80%;                /* Makes it responsive on various screen sizes */
+    height: 150px;             /* Adjust height to be comfortable for typing */
+    padding: 15px;             /* Adds padding for better readability */
+    border-radius: 10px;       /* Rounds the corners of the textarea */
+    border: 2px solid #6c63ff; /* Custom border color (purple) to match the theme */
+    font-size: 16px;           /* Ensures a readable font size */
+    resize: none;              /* Prevents resizing */
+    outline: none;             /* Removes the default outline */
+    margin-bottom: 20px;       /* Adds space between the prompt and other elements */
+    background-color: #f7f7f7; /* Light background color */
+    color: #333;               /* Text color */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+.Response
+{
+    width: 80%;                /* Same width as Prompt for consistency */
+    height: 200px;             /* Slightly larger for displaying longer responses */
+    padding: 15px;             /* Padding for comfortable reading */
+    border-radius: 10px;       /* Rounds the corners */
+    border: 2px solid #6c63ff; /* Matches border color of the Prompt */
+    font-size: 16px;           /* Same font size as Prompt */
+    background-color: #e9ecef; /* Light gray background for differentiation */
+    color: #333;               /* Text color */
+    overflow-y: auto;          /* Allows vertical scrolling if content overflows */
+    white-space: pre-wrap;     /* Preserves line breaks in the response */
+    margin-bottom: 20px;       /* Adds space between the response and other elements */
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Shadow for aesthetics */
+}

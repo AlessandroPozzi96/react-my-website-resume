@@ -20,6 +20,7 @@ import Skills from "components/Skills/Skills";
 import PortfolioPDF from "./Assets/Portfolio.pdf";
 import ResumePDF from "./Assets/CV_AlessandroPozzi.pdf";
 import Projects from "components/Projects/Projects";
+import { Chat } from "components/Chat/Chat";
 
 function App() {
   const [load, isLoad] = useState(true);
@@ -42,6 +43,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/skills" element={<Skills />} />
+          <Route path="/chat" element={<Chat />} />
           <Route path="/about" element={<About />} />
           <Route
             path="/resume"
