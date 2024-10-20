@@ -37,7 +37,7 @@ My name is Alessandro Pozzi, born in 1996, live in Belgium and i made this websi
       const result = await axios.post(Constants.OPENAI.API_URL, data, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${Constants.OPENAI.API_KEY}`,
+          Authorization: `Bearer `,
         },
       });
 
