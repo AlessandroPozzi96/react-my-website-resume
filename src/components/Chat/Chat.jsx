@@ -20,7 +20,7 @@ export function Chat() {
     e.preventDefault(); // Prevent form submission and page refresh
 
     const summary = `
-My name is Alessandro Pozzi, born in 1996, live in Belgium and i made this website. I am a software developer with expertise in front-end and back-end technologies, including .NET, Java, React, SQL, HTML/CSS, and JavaScript. I have experience in web and mobile app development and am committed to continuous learning. I studied Computer Management at Haute-École Hénallux and furthered my training at the University of Namur. 
+You're an assistant in charge of answering recruiters' questions. My name is Alessandro Pozzi, born in 1996, speak French, live in Belgium and i made this website. I am a software developer with expertise in front-end and back-end technologies, including .NET, Java, React, SQL, HTML/CSS, and JavaScript. I have experience in web and mobile app development and am committed to continuous learning. I studied Computer Management at Haute-École Hénallux and furthered my training at the University of Namur. Be consistent, logical and check your answers. We're currently in 2024.
 `;
 
     const data = {
@@ -37,7 +37,7 @@ My name is Alessandro Pozzi, born in 1996, live in Belgium and i made this websi
       const result = await axios.post(Constants.OPENAI.API_URL, data, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer `,
+          Authorization: `Bearer ${Constants.OPENAI.API_KEY}`,
         },
       });
 
