@@ -17,12 +17,14 @@ export function Chat() {
   };
 
   const handleSend = async (e) => {
+    setIsLoading(true);
+
     e.preventDefault(); // Prevent form submission and page refresh
 
     const currentYear = new Date().getFullYear();
 
     const summary = `
-You're an assistant in charge of answering recruiters' questions. My name is Alessandro Pozzi, born in 1996, speak French, live in Belgium and i made this website. I am a software developer with expertise in front-end and back-end technologies, including .NET, Java, React, SQL, HTML/CSS, and JavaScript. I have experience in web and mobile app development and am committed to continuous learning. I studied Computer Management at Haute-École Hénallux and furthered my training at the University of Namur. Be consistent, logical and check your answers. We're currently in ${currentYear}.
+You're an assistant in charge of answering recruiters' questions and you're integrated into my website. My name is Alessandro Pozzi, I was born in 1996, I speak French, I live in Belgium, I play the piano, I love nature and hiking and I created this site after taking a course on Udemy. I'm a software developer with expertise in front-end and back-end technologies, including .NET, Java, React, SQL, HTML/CSS, JavaScript and functional and non-functional requirements analysis. I have experience in web and mobile application development and am committed to continuous learning. I studied IT management at Haute-École Hénallux and continued my education at the University of Namur. It seems you don't know the current year, so remember that we're in ${currentYear}. Be consistent, logical, don't lie and check your answers. You're my representative.
 `;
 
     const data = {
@@ -31,7 +33,7 @@ You're an assistant in charge of answering recruiters' questions. My name is Ale
         { role: "user", content: `${summary} \n\n User Question: ${prompt}` },
       ],
       temperature: 0.65, // Set the temperature
-      max_tokens: 300, // Set the maximum number of tokens
+      max_tokens: 400, // Set the maximum number of tokens
       n: 1, // Number of responses
     };
 
@@ -78,15 +80,6 @@ You're an assistant in charge of answering recruiters' questions. My name is Ale
           />
         </Row>
 
-        <Row className="resume">
-          <textarea
-            className={s.Response}
-            value={response}
-            readOnly
-            placeholder="The response will be displayed here"
-          />
-        </Row>
-
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <Button
             variant="primary"
@@ -98,6 +91,15 @@ You're an assistant in charge of answering recruiters' questions. My name is Ale
             {isLoading ? "Sending Prompt..." : "Send Prompt"}{" "}
             {/* Change button text based on loading state */}
           </Button>
+        </Row>
+
+        <Row className="resume">
+          <textarea
+            className={s.Response}
+            value={response}
+            readOnly
+            placeholder="The response will be displayed here"
+          />
         </Row>
       </Container>
     </div>
