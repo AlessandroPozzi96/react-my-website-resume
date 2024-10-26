@@ -1,6 +1,6 @@
 import s from "./style.module.css";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
@@ -11,29 +11,42 @@ export function Chat() {
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const currentYear = new Date().getFullYear();
+
+  const summary = `
+You're an assistant in charge of answering recruiters' questions and you're integrated into my website. My name is Alessandro Pozzi, I was born in 1996, I speak French, I live in Belgium, I play the piano, I love nature and hiking and I created this site after taking a course on Udemy. I'm a software developer with expertise in front-end and back-end technologies, including .NET, Java, React, SQL, HTML/CSS, JavaScript and functional and non-functional requirements analysis. I have experience in web and mobile application development and am committed to continuous learning. I studied IT management at Haute-École Hénallux and continued my education at the University of Namur. It seems you don't know the current year, so remember that we're in ${currentYear}. Be consistent, logical, don't lie and always check your answers. You're my representative.
+`;
+  const [conversation, setConversation] = useState([
+    { role: "system", content: `${summary}` },
+  ]);
 
   const handlePromptChange = (e) => {
     setPrompt(e.target.value);
   };
 
+  useEffect(() => {
+    // Log conversation state whenever it updates
+    console.log("Updated conversation:", conversation);
+  }, [conversation]); // This effect runs every time `conversation` updates
+
   const handleSend = async (e) => {
+    e.preventDefault(); // Prevent form submission and page refresh
+    // Ensure that the Prompt is not empty
+    if (!prompt) return;
+
     setIsLoading(true);
 
-    e.preventDefault(); // Prevent form submission and page refresh
-
-    const currentYear = new Date().getFullYear();
-
-    const summary = `
-You're an assistant in charge of answering recruiters' questions and you're integrated into my website. My name is Alessandro Pozzi, I was born in 1996, I speak French, I live in Belgium, I play the piano, I love nature and hiking and I created this site after taking a course on Udemy. I'm a software developer with expertise in front-end and back-end technologies, including .NET, Java, React, SQL, HTML/CSS, JavaScript and functional and non-functional requirements analysis. I have experience in web and mobile application development and am committed to continuous learning. I studied IT management at Haute-École Hénallux and continued my education at the University of Namur. It seems you don't know the current year, so remember that we're in ${currentYear}. Be consistent, logical, don't lie and check your answers. You're my representative.
-`;
+    // Add the user's prompt
+    const updatedConversation = [
+      ...conversation,
+      {role: "user", content: `${prompt}`}
+    ];
 
     const data = {
       model: "gpt-3.5-turbo", // Specify the model you want to use
-      messages: [
-        { role: "user", content: `${summary} \n\n User Question: ${prompt}` },
-      ],
-      temperature: 0.65, // Set the temperature
-      max_tokens: 400, // Set the maximum number of tokens
+      messages: updatedConversation,
+      temperature: 0.7, // Set the temperature
+      max_tokens: 500, // Set the maximum number of tokens
       n: 1, // Number of responses
     };
 
@@ -48,9 +61,16 @@ You're an assistant in charge of answering recruiters' questions and you're inte
       // Get the assistant's messages from the response
       const assistantMessages = result.data.choices.map(
         (choice) => choice.message.content
-      );
-      setResponse(assistantMessages.join("\n")); // Join responses if multiple
+      ).join("\n");
 
+      // Update conversation with the assistant's response
+      setConversation([
+        ...updatedConversation,
+        { role: "assistant", content: assistantMessages }
+      ]);
+
+      setResponse(assistantMessages); // Join responses if multiple
+      
       // Clear the prompt
       setPrompt("");
     } catch (error) {
@@ -89,7 +109,6 @@ You're an assistant in charge of answering recruiters' questions and you're inte
             disabled={isLoading} // Disable button while loading
           >
             {isLoading ? "Sending Prompt..." : "Send Prompt"}{" "}
-            {/* Change button text based on loading state */}
           </Button>
         </Row>
 

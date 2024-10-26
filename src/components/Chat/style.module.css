@@ -32,6 +32,7 @@
     white-space: pre-wrap; /* Preserve new lines in the response */
     word-wrap: break-word; /* Ensure long words break correctly */
     -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+    user-select: text;
 }
 
 textarea {
