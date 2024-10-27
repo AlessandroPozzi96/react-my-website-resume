@@ -1,6 +1,6 @@
 import s from "./style.module.css";
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import axios from "axios";
@@ -8,26 +8,36 @@ import { Constants } from "Constants/Constants";
 import Particle from "../Particle/Particle";
 
 export function Chat() {
+  // Declare variables
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const currentYear = new Date().getFullYear();
-
   const summary = `
 You're an assistant in charge of answering recruiters' questions and you're integrated into my website. My name is Alessandro Pozzi, I was born in 1996, I speak French, I live in Belgium, I play the piano, I love nature and hiking and I created this site after taking a course on Udemy. I'm a software developer with expertise in front-end and back-end technologies, including .NET, Java, React, SQL, HTML/CSS, JavaScript and functional and non-functional requirements analysis. I have experience in web and mobile application development and am committed to continuous learning. I studied IT management at Haute-École Hénallux and continued my education at the University of Namur. It seems you don't know the current year, so remember that we're in ${currentYear}. Be consistent, logical, don't lie and always check your answers. You're my representative.
 `;
   const [conversation, setConversation] = useState([
     { role: "system", content: `${summary}` },
   ]);
+  const responseRef = useRef(null);
 
-  const handlePromptChange = (e) => {
-    setPrompt(e.target.value);
-  };
-
+  // Effects hooks
   useEffect(() => {
     // Log conversation state whenever it updates
     console.log("Updated conversation:", conversation);
   }, [conversation]); // This effect runs every time `conversation` updates
+
+   // Scroll to the top of the response when it updates
+   useEffect(() => {
+    if (responseRef.current) {
+      responseRef.current.scrollTop = 0;
+    }
+  }, [response]);
+
+  // Handling methods
+  const handlePromptChange = (e) => {
+    setPrompt(e.target.value);
+  };
 
   const handleSend = async (e) => {
     e.preventDefault(); // Prevent form submission and page refresh
@@ -39,7 +49,7 @@ You're an assistant in charge of answering recruiters' questions and you're inte
     // Add the user's prompt
     const updatedConversation = [
       ...conversation,
-      {role: "user", content: `${prompt}`}
+      { role: "user", content: `${prompt}` },
     ];
 
     const data = {
@@ -59,18 +69,18 @@ You're an assistant in charge of answering recruiters' questions and you're inte
       });
 
       // Get the assistant's messages from the response
-      const assistantMessages = result.data.choices.map(
-        (choice) => choice.message.content
-      ).join("\n");
+      const assistantMessages = result.data.choices
+        .map((choice) => choice.message.content)
+        .join("\n");
 
       // Update conversation with the assistant's response
       setConversation([
         ...updatedConversation,
-        { role: "assistant", content: assistantMessages }
+        { role: "assistant", content: assistantMessages },
       ]);
 
       setResponse(assistantMessages); // Join responses if multiple
-      
+
       // Clear the prompt
       setPrompt("");
     } catch (error) {
@@ -112,10 +122,11 @@ You're an assistant in charge of answering recruiters' questions and you're inte
           </Button>
         </Row>
 
-        <Row className="resume">
+        <Row className="resume" style={{ zIndex: 1, position: "relative" }}>
           <textarea
             className={s.Response}
             value={response}
+            ref={responseRef}
             readOnly
             placeholder="The response will be displayed here"
           />

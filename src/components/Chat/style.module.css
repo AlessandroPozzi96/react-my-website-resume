@@ -8,35 +8,35 @@
     font-size: 16px;           /* Ensures a readable font size */
     resize: none;              /* Prevents resizing */
     outline: none;             /* Removes the default outline */
-    margin-bottom: 20px;       /* Adds space between the prompt and other elements */
+    margin-bottom: 5px;       /* Adds space between the prompt and other elements */
     background-color: #f7f7f7; /* Light background color */
     color: #333;               /* Text color */
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
     overflow: auto; /* Make sure scrolling is enabled */
 }
 
-.Response
-{
-    width: 80%;                /* Same width as Prompt for consistency */
-    height: 200px;             /* Slightly larger for displaying longer responses */
-    padding: 15px;             /* Padding for comfortable reading */
-    border-radius: 10px;       /* Rounds the corners */
-    border: 2px solid #6c63ff; /* Matches border color of the Prompt */
-    font-size: 16px;           /* Same font size as Prompt */
-    background-color: #e9ecef; /* Light gray background for differentiation */
-    color: #333;               /* Text color */
-    overflow-y: auto;          /* Allows vertical scrolling if content overflows */
-    margin-bottom: 20px;       /* Adds space between the response and other elements */
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* Shadow for aesthetics */
-    overflow: auto; /* Enable scrolling */
-    white-space: pre-wrap; /* Preserve new lines in the response */
-    word-wrap: break-word; /* Ensure long words break correctly */
-    -webkit-overflow-scrolling: touch; /* Enable smooth scrolling on iOS devices */
+.Response {
+    height: 200px;
+    touch-action: auto;
+    pointer-events: auto;
+    max-height: 200px;             /* Sets a maximum height, which enables overflow */
+    width: 80%;                    /* Same width as Prompt for consistency */
+    padding: 15px;                 /* Padding for comfortable reading */
+    border-radius: 10px;
+    border: 2px solid #6c63ff;
+    font-size: 16px;
+    background-color: #e9ecef;
+    color: #333;
+    overflow-y: auto;              /* Enables vertical scrolling when content overflows */
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
     user-select: text;
 }
 
 textarea {
-    height: auto;
     min-height: 150px; /* Set a minimum height */
     max-height: 400px; /* Set a maximum height for scrolling */
   }
