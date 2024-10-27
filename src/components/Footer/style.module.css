@@ -8,6 +8,7 @@
     padding-bottom: 8px !important ;
     position: fixed;
     width: 100%;
+    z-index: 1;
   }
   .footerCcopywright {
     text-align: center !important;

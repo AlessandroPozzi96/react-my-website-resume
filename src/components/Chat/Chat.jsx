@@ -24,7 +24,7 @@ You're an assistant in charge of answering recruiters' questions and you're inte
   // Effects hooks
   useEffect(() => {
     // Log conversation state whenever it updates
-    console.log("Updated conversation:", conversation);
+    //console.log("Updated conversation:", conversation);
   }, [conversation]); // This effect runs every time `conversation` updates
 
   // Scroll to the top of the response when it updates
@@ -110,7 +110,9 @@ You're an assistant in charge of answering recruiters' questions and you're inte
           />
         </Row>
 
-        <Row style={{ justifyContent: "center", zIndex: 1, position: "relative" }}>
+        <Row
+          style={{ justifyContent: "center", zIndex: 1, position: "relative" }}
+        >
           <Button
             variant="primary"
             type="button"
@@ -130,6 +132,16 @@ You're an assistant in charge of answering recruiters' questions and you're inte
             readOnly
             placeholder="The response will be displayed here"
           />
+        </Row>
+
+        <Row className="resume" style={{ position: "relative" }}>
+          <p>
+            You still have some <strong className="purple">questions</strong> ?{" "}
+            <span className="wave" role="img" aria-labelledby="wave">
+              😲
+            </span>{" "}
+            <a href="mailto:alessandro.pozzi72@gmail.com">Contact me!</a>
+          </p>
         </Row>
       </Container>
     </div>
