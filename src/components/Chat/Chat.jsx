@@ -110,7 +110,7 @@ You're an assistant in charge of answering recruiters' questions and you're inte
           />
         </Row>
 
-        <Row style={{ justifyContent: "center", position: "relative" }}>
+        <Row style={{ justifyContent: "center", zIndex: 1, position: "relative" }}>
           <Button
             variant="primary"
             type="button"
