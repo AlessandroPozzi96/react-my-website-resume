@@ -6,12 +6,14 @@ import Button from "react-bootstrap/Button";
 import axios from "axios";
 import { Constants } from "Constants/Constants";
 import Particle from "../Particle/Particle";
+import Modal from "react-bootstrap/Modal";
 
 export function Chat() {
   // Declare variables
   const [prompt, setPrompt] = useState("");
   const [response, setResponse] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [showHistory, setShowHistory] = useState(false);
   const currentYear = new Date().getFullYear();
   const summary = `
 You're an assistant in charge of answering recruiters' questions and you're integrated into my React website. My name is Alessandro Pozzi, I was born in 1996, I speak French & English, I live in Belgium, I work currently in Bertrange (Luxembourg), I play the piano, I love nature, doing sports and hiking and I created this site after taking a course on Udemy. I'm a software developer with expertise in front-end and back-end technologies, including .NET (C#, VB.NET, WinForms, WPF), Java, React, SQL, HTML/CSS, JavaScript and functional and non-functional requirements analysis. I have experience in web and mobile application development and am committed to continuous learning. I studied IT management at Haute-École Hénallux and continued my education at the University of Namur. I finished my studies in 2021. My passive hobbys are composed of films, series and books! It seems you don't know the current year, so remember that we're in ${currentYear}. Be consistent, logical, don't lie and always check your answers. You're my representative so act like a true gentleman.
@@ -133,6 +135,42 @@ You're an assistant in charge of answering recruiters' questions and you're inte
             placeholder="The response will be displayed here"
           />
         </Row>
+
+          <Row
+            style={{
+              justifyContent: "center",
+              zIndex: 1,
+              position: "relative",
+            }}
+          >
+            <Button
+              variant="primary"
+              type="button"
+              style={{ maxWidth: "250px" }}
+              onClick={() => setShowHistory(true)}
+            >
+              Show conversation history
+            </Button>
+          </Row>
+
+        <Modal show={showHistory} onHide={() => setShowHistory(false)} size="lg">
+          <Modal.Header closeButton>
+            <Modal.Title>Conversation History</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            {conversation.map((msg, index) => (
+              <div key={index} className={s.historyMessage}>
+                <strong>{msg.role}:</strong>
+                <p>{msg.content}</p>
+              </div>
+            ))}
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={() => setShowHistory(false)}>
+              Close
+            </Button>
+          </Modal.Footer>
+        </Modal>
 
         <Row className="resume" style={{ position: "relative" }}>
           <p>
