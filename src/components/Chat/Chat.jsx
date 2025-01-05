@@ -158,11 +158,13 @@ You're an assistant in charge of answering recruiters' questions and you're inte
             <Modal.Title>Conversation History</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {conversation.map((msg, index) => (
-              <div key={index} className={s.historyMessage}>
-                <strong>{msg.role}:</strong>
-                <p>{msg.content}</p>
-              </div>
+            {conversation.slice().reverse().map((msg, index) => (
+              msg.role !== 'system' && (
+                <div key={index} className={s.historyMessage}>
+                  <strong>{msg.role}:</strong>
+                  <p>{msg.content}</p>
+                </div>
+              )
             ))}
           </Modal.Body>
           <Modal.Footer>
