@@ -16,12 +16,13 @@ export function Chat() {
   const [showHistory, setShowHistory] = useState(false);
   const currentYear = new Date().getFullYear();
   const summary = `
-You're an assistant in charge of answering recruiters' questions and you're integrated into my React website. My name is Alessandro Pozzi, I was born in 1996, I speak French & English, I live in Belgium, I work currently in Bertrange (Luxembourg), I play the piano, I love nature, doing sports and hiking and I created this site after taking a course on Udemy. I'm a software developer with expertise in front-end and back-end technologies, including .NET (C#, VB.NET, WinForms, WPF), Java, React, SQL, HTML/CSS, JavaScript and functional and non-functional requirements analysis. I have experience in web and mobile application development and am committed to continuous learning. I studied IT management at Haute-École Hénallux and continued my education at the University of Namur. I finished my studies in 2021. My passive hobbys are composed of films, series and books! It seems you don't know the current year, so remember that we're in ${currentYear}. Be consistent, logical, don't lie and always check your answers. You're my representative so act like a true gentleman.
+You're an assistant in charge of answering recruiters' questions and you're integrated into my React website. My name is Alessandro Pozzi, I'm born in 1996, I speak French & English, I live in Belgium, I work currently in Bertrange (Luxembourg), I play the piano, I love nature, doing sports and hiking and I created this site after taking a course on Udemy. I'm a software developer with expertise in front-end and back-end technologies, including .NET (C#, VB.NET, WinForms, WPF), Java, React, SQL, HTML/CSS, JavaScript and functional and non-functional requirements analysis. I have experience in web and mobile application development and am committed to continuous learning. I studied IT management at Haute-École Hénallux and continued my education at the University of Namur. I finished my studies in 2021. My passive hobbys are composed of films, series and books! The current year is ${currentYear}. Be consistent, logical, don't lie and always check your answers. You're my representative so act like a true gentleman. Your name is not Alessandro Pozzi, choose a cool name if someone ask. Be always a little mysterious, don't give all the facts directly to the user: people have to discuss with in order to know more about me. I'm not a God but you are my assistant so when you speak of me, always do so with great esteem.
 `;
   const [conversation, setConversation] = useState([
     { role: "system", content: `${summary}` },
   ]);
   const responseRef = useRef(null);
+  const promptRef = useRef(null);
 
   // Effects hooks
   useEffect(() => {
@@ -85,6 +86,11 @@ You're an assistant in charge of answering recruiters' questions and you're inte
 
       // Clear the prompt
       setPrompt("");
+
+      // Focus on the textarea
+      if (promptRef.current) {
+        promptRef.current.focus();
+      }
     } catch (error) {
       console.error("Error fetching the OpenAI API:", error);
       setResponse("An error occurred while fetching the response.");
@@ -106,6 +112,7 @@ You're an assistant in charge of answering recruiters' questions and you're inte
         <Row className="resume" style={{ zIndex: 1, position: "relative" }}>
           <textarea
             className={s.Prompt}
+            ref={promptRef}
             value={prompt}
             onChange={handlePromptChange}
             placeholder="Write your prompt here"
@@ -136,36 +143,44 @@ You're an assistant in charge of answering recruiters' questions and you're inte
           />
         </Row>
 
-          <Row
-            style={{
-              justifyContent: "center",
-              zIndex: 1,
-              position: "relative",
-            }}
+        <Row
+          style={{
+            justifyContent: "center",
+            zIndex: 1,
+            position: "relative",
+          }}
+        >
+          <Button
+            variant="primary"
+            type="button"
+            style={{ maxWidth: "250px" }}
+            onClick={() => setShowHistory(true)}
           >
-            <Button
-              variant="primary"
-              type="button"
-              style={{ maxWidth: "250px" }}
-              onClick={() => setShowHistory(true)}
-            >
-              Show conversation history
-            </Button>
-          </Row>
+            Show conversation history
+          </Button>
+        </Row>
 
-        <Modal show={showHistory} onHide={() => setShowHistory(false)} size="lg">
+        <Modal
+          show={showHistory}
+          onHide={() => setShowHistory(false)}
+          size="lg"
+        >
           <Modal.Header closeButton>
             <Modal.Title>Conversation History</Modal.Title>
           </Modal.Header>
           <Modal.Body>
-            {conversation.slice().reverse().map((msg, index) => (
-              msg.role !== 'system' && (
-                <div key={index} className={s.historyMessage}>
-                  <strong>{msg.role}:</strong>
-                  <p>{msg.content}</p>
-                </div>
-              )
-            ))}
+            {conversation
+              .slice()
+              .reverse()
+              .map(
+                (msg, index) =>
+                  msg.role !== "system" && (
+                    <div key={index} className={s.historyMessage}>
+                      <strong>{msg.role}:</strong>
+                      <p>{msg.content}</p>
+                    </div>
+                  )
+              )}
           </Modal.Body>
           <Modal.Footer>
             <Button variant="secondary" onClick={() => setShowHistory(false)}>

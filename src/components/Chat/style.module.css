@@ -40,3 +40,27 @@ textarea {
     min-height: 150px; /* Set a minimum height */
     max-height: 400px; /* Set a maximum height for scrolling */
   }
+
+  /* Media Query for Desktop */
+@media (min-width: 768px) {
+    .Prompt, .Response {
+        width: 60%;              /* Reduce width on larger screens */
+        height: 120px;           /* Reduce height for Prompt */
+    }
+
+    .Response {
+        height: 180px;           /* Reduce height for Response */
+    }
+}
+
+/* Optional: Adjustments for even larger screens (e.g., desktops) */
+@media (min-width: 1024px) {
+    .Prompt, .Response {
+        width: 50%;              /* Further reduce width on extra large screens */
+        height: 100px;           /* Further reduce height for Prompt */
+    }
+
+    .Response {
+        height: 160px;           /* Further reduce height for Response */
+    }
+}
