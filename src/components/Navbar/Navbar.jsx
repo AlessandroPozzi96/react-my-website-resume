@@ -38,7 +38,9 @@ function NavBar() {
     >
       <Container>
         <Navbar.Brand href="/" className="d-flex">
-        <div ><AiOutlineReload style={{ marginBottom: "2px" }} /> Refresh</div>
+          <div>
+            <AiOutlineReload style={{ marginBottom: "2px" }} />
+          </div>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
@@ -79,9 +81,7 @@ function NavBar() {
 
             <Nav.Item>
               <Nav.Link as={Link} to="/chat" onClick={() => isExpand(false)}>
-                <IoChatbubbleEllipsesOutline
-                  style={{ marginBottom: "2px" }}
-                />{" "}
+                <IoChatbubbleEllipsesOutline style={{ marginBottom: "2px" }} />{" "}
                 Chat
               </Nav.Link>
             </Nav.Item>
