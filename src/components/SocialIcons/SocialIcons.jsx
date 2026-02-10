@@ -11,7 +11,7 @@ import React from "react";
 
 export function SocialIcons({ isFooter }) {
   const style = isFooter ? { color: "white" } : {};
-  const rel = isFooter ? "noopener noreferrer" : "noreferrer";
+  //const rel = isFooter ? "noopener noreferrer" : "noreferrer";
   const className = isFooter ? "" : "icon-colour  home-social-icons";
   const iconsData = [
     { icon: AiFillGithub, href: Constants.URLS.GITHUB_URL },
@@ -28,7 +28,7 @@ export function SocialIcons({ isFooter }) {
           BootStrapIcon={item.icon}
           href={item.href}
           style={style}
-          rel={rel}
+          //rel={rel}
           className={className}
         />
       ))}
