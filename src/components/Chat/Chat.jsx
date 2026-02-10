@@ -56,18 +56,17 @@ You're an assistant in charge of answering recruiters' questions and you're inte
     ];
 
     const data = {
-      model: "gpt-3.5-turbo", // Specify the model you want to use
+      model: "llama-3.1-8b-instant",
       messages: updatedConversation,
-      temperature: 0.7, // Set the temperature
-      max_tokens: 500, // Set the maximum number of tokens
-      n: 1, // Number of responses
+      temperature: 0.7,
+      max_tokens: 500,
     };
 
     try {
-      const result = await axios.post(Constants.OPENAI.API_URL, data, {
+      const result = await axios.post(Constants.GROQ.API_URL, data, {
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${Constants.OPENAI.API_KEY}`,
+          Authorization: `Bearer ${Constants.GROQ.API_KEY}`,
         },
       });
 
@@ -105,7 +104,7 @@ You're an assistant in charge of answering recruiters' questions and you're inte
         <Particle />
         <Row style={{ justifyContent: "center", position: "relative" }}>
           <h1 className="heading">
-            Chat with <strong className="purple">OpenAI</strong> Platform
+            Chat with <strong className="purple">AI Assistant</strong>
           </h1>
         </Row>
 
@@ -179,7 +178,7 @@ You're an assistant in charge of answering recruiters' questions and you're inte
                       <strong>{msg.role}:</strong>
                       <p>{msg.content}</p>
                     </div>
-                  )
+                  ),
               )}
           </Modal.Body>
           <Modal.Footer>

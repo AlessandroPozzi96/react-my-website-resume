@@ -20,4 +20,11 @@ export class Constants {
       API_URL: "https://api.openai.com/v1/chat/completions",
     };
   }
+
+  static get GROQ() {
+  return {
+    API_KEY: process.env.REACT_APP_GROQ_API_KEY,
+    API_URL: "https://api.groq.com/openai/v1/chat/completions",
+  };
+}
 }
