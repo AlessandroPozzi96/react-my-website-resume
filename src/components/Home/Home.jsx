@@ -66,7 +66,7 @@ function Home() {
                 <i>
                   <b className="purple">Bachelor's degree</b>{" "}
                 </i>
-                from Hénallux. Currently, I worked 4 years as a&nbsp;
+                from Hénallux. I worked 4 years as a&nbsp;
                 <i>
                   <b className="purple">.NET developer</b>
                 </i>
