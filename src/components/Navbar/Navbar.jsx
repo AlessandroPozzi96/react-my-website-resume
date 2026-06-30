@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
@@ -19,15 +19,30 @@ function NavBar() {
   const [expand, isExpand] = useState(false);
   const [navColour, isNavColour] = useState(false);
 
-  function scrollHandler() {
-    if (window.scrollY >= 20) {
-      isNavColour(true);
-    } else {
-      isNavColour(false);
-    }
-  }
+  useEffect(() => {
+    const scrollHandler = () => {
+      isNavColour(window.scrollY >= 20);
+    };
 
-  window.addEventListener("scroll", scrollHandler);
+    scrollHandler();
+    window.addEventListener("scroll", scrollHandler);
+
+    return () => window.removeEventListener("scroll", scrollHandler);
+  }, []);
+
+  const navItems = [
+    { to: "/", label: "Home", icon: AiOutlineHome },
+    { to: "/projects", label: "Projects", icon: AiOutlineFolderOpen },
+    {
+      to: "/skills",
+      label: "Skills",
+      icon: AiOutlineFundProjectionScreen,
+    },
+    { to: "/chat", label: "Chat", icon: IoChatbubbleEllipsesOutline },
+    { to: "/resume", label: "Resume", icon: AiOutlineIdcard },
+    { to: "/portfolio", label: "Portfolio", icon: CgFileDocument },
+    { to: "/about", label: "About", icon: AiOutlineUser },
+  ];
 
   return (
     <Navbar
@@ -37,7 +52,7 @@ function NavBar() {
       className={navColour ? "sticky" : "navbar"}
     >
       <Container>
-        <Navbar.Brand href="/" className="d-flex">
+        <Navbar.Brand as={Link} to="/" className="d-flex">
           <div>
             <AiOutlineReload style={{ marginBottom: "2px" }} />
           </div>
@@ -45,7 +60,7 @@ function NavBar() {
         <Navbar.Toggle
           aria-controls="responsive-navbar-nav"
           onClick={() => {
-            isExpand(expand ? false : "expanded");
+            isExpand((current) => !current);
           }}
         >
           <span></span>
@@ -54,59 +69,13 @@ function NavBar() {
         </Navbar.Toggle>
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto" defaultActiveKey="#home">
-            <Nav.Item>
-              <Nav.Link as={Link} to="/" onClick={() => isExpand(false)}>
-                <AiOutlineHome style={{ marginBottom: "2px" }} /> Home
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/projects"
-                onClick={() => isExpand(false)}
-              >
-                <AiOutlineFolderOpen style={{ marginBottom: "2px" }} /> Projects
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link as={Link} to="/skills" onClick={() => isExpand(false)}>
-                <AiOutlineFundProjectionScreen
-                  style={{ marginBottom: "2px" }}
-                />{" "}
-                Skills
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link as={Link} to="/chat" onClick={() => isExpand(false)}>
-                <IoChatbubbleEllipsesOutline style={{ marginBottom: "2px" }} />{" "}
-                Chat
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link as={Link} to="/resume" onClick={() => isExpand(false)}>
-                <AiOutlineIdcard style={{ marginBottom: "2px" }} /> Resume
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link
-                as={Link}
-                to="/portfolio"
-                onClick={() => isExpand(false)}
-              >
-                <CgFileDocument style={{ marginBottom: "2px" }} /> Portfolio
-              </Nav.Link>
-            </Nav.Item>
-
-            <Nav.Item>
-              <Nav.Link as={Link} to="/about" onClick={() => isExpand(false)}>
-                <AiOutlineUser style={{ marginBottom: "2px" }} /> About
-              </Nav.Link>
-            </Nav.Item>
+            {navItems.map(({ to, label, icon: Icon }) => (
+              <Nav.Item key={to}>
+                <Nav.Link as={Link} to={to} onClick={() => isExpand(false)}>
+                  <Icon style={{ marginBottom: "2px" }} /> {label}
+                </Nav.Link>
+              </Nav.Item>
+            ))}
           </Nav>
         </Navbar.Collapse>
       </Container>

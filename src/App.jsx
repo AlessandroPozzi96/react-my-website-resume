@@ -17,12 +17,13 @@ import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Skills from "components/Skills/Skills";
-import PortfolioPDF from "./Assets/Portfolio.pdf";
-import ResumePDF from "./Assets/CV_AlessandroPozzi_2026.pdf";
 import Projects from "components/Projects/Projects";
-import { Chat } from "components/Chat/Chat";
+import { Chat } from "components/Chat/ChatView";
 
 function App() {
+  const resumePdf = `${process.env.PUBLIC_URL}/CV_AlessandroPozzi_2026.pdf`;
+  const portfolioPdf = `${process.env.PUBLIC_URL}/Portfolio.pdf`;
+
   const [load, isLoad] = useState(true);
 
   useEffect(() => {
@@ -47,13 +48,11 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route
             path="/resume"
-            element={<PDFViewerCard PDFFile={ResumePDF} title={"Resume"} />}
+            element={<PDFViewerCard PDFFile={resumePdf} title={"Resume"} />}
           />
           <Route
             path="/portfolio"
-            element={
-              <PDFViewerCard PDFFile={PortfolioPDF} title={"Portfolio"} />
-            }
+            element={<PDFViewerCard PDFFile={portfolioPdf} title={"Portfolio"} />}
           />
           <Route path="*" element={<Navigate to="/" />} />
         </Routes>

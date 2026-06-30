@@ -7,24 +7,10 @@ export class Constants {
     };
   }
 
-  static get NUMBERS() {
-    return {
-      PI: 3.14159,
-      E: 2.71828,
-    };
-  }
-
-  static get OPENAI() {
-    return {
-      API_KEY: process.env.REACT_APP_OPENAI_API_KEY,
-      API_URL: "https://api.openai.com/v1/chat/completions",
-    };
-  }
-
   static get GROQ() {
-  return {
-    API_KEY: process.env.REACT_APP_GROQ_API_KEY,
-    API_URL: "https://api.groq.com/openai/v1/chat/completions",
-  };
-}
+    return {
+      API_KEY: process.env.REACT_APP_GROQ_API_KEY,
+      API_URL: "https://api.groq.com/openai/v1/chat/completions",
+    };
+  }
 }
