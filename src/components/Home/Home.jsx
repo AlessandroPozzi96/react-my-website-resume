@@ -3,7 +3,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import homeLogoCodingGuy from "../../Assets/CodingGuy.png";
 import Particle from "../Particle/Particle";
 import { HomeDescription } from "components/HomeDescription/HomeDescription";
-import myImg from "../../Assets/HommeAffaireArrondi.png";
+import myImg from "../../Assets/CostumeCircle.png";
 import Tilt from "react-parallax-tilt";
 import { SocialIcons } from "components/SocialIcons/SocialIcons";
 import s from "./style.module.css";
@@ -66,12 +66,13 @@ function Home() {
                 <i>
                   <b className="purple">Bachelor's degree</b>{" "}
                 </i>
-                from Hénallux. Currently, I work as a&nbsp;
+                from Hénallux. Currently, I worked 4 years as a&nbsp;
                 <i>
                   <b className="purple">.NET developer</b>
                 </i>
-                , but I also enjoy exploring other fields like Java, React,
-                JavaScript, etc.
+                &nbsp; and now I'm looking for a new opportunity to contribute
+                to challenging projects and continue growing as a software
+                engineer.
                 <br />
                 <br />
                 Originally from&nbsp;

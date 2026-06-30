@@ -18,7 +18,7 @@ import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Skills from "components/Skills/Skills";
 import PortfolioPDF from "./Assets/Portfolio.pdf";
-import ResumePDF from "./Assets/CV_AlessandroPozzi.pdf";
+import ResumePDF from "./Assets/CV_AlessandroPozzi_2026.pdf";
 import Projects from "components/Projects/Projects";
 import { Chat } from "components/Chat/Chat";
 
