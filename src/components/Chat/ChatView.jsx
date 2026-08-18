@@ -55,7 +55,7 @@ export function Chat() {
     ];
 
     const data = {
-      model: "llama-3.1-8b-instant",
+      model: "openai/gpt-oss-20b",
       messages: updatedConversation,
       temperature: 0.7,
       max_tokens: 500,
