@@ -4,7 +4,6 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./components/Home/Home";
 import About from "./components/About/About";
 import Footer from "./components/Footer/Footer";
-//import Resume from "./components/Resume/ResumeNew";
 import PDFViewerCard from "./components/PDFViewerCard/PDFViewerCard";
 import {
   BrowserRouter as Router,

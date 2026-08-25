@@ -28,6 +28,7 @@ import {
 import { FaLinux, FaNetworkWired } from "react-icons/fa";
 import { GrDocker } from "react-icons/gr";
 import { TbBrandVisualStudio } from "react-icons/tb";
+import { VscAzureDevops } from "react-icons/vsc";
 
 export const projects = [
     {
@@ -104,6 +105,7 @@ export const techStack = [
   { icon: FaLinux, title: "Linux" },
   { icon: SiCsharp, title: "CSharp" },
   { icon: FaNetworkWired, title: "General network knowlege" },
+  { icon: VscAzureDevops, title: "Azure DevOps" },
 ];
 
 export const toolStack = [
