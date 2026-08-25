@@ -3,6 +3,8 @@ import TVShowAdviser from "../Assets/Projects/TVShowAdviser.png";
 import ExpenseTracker from "../Assets/Projects/ExpenseTRacker.png";
 import RedCross from "../Assets/Projects/RedCross.png";
 import DonDeSang from "../Assets/Projects/DonDeSang.png";
+import AzureDevOpsPipeline from "../Assets/Projects/AzurePipeline.png";
+import Microservices from "../Assets/Projects/MicroServices.png";
 
 import {
   DiJavascript1,
@@ -28,6 +30,22 @@ import { GrDocker } from "react-icons/gr";
 import { TbBrandVisualStudio } from "react-icons/tb";
 
 export const projects = [
+    {
+    imgPath: Microservices,
+    isBlog: false,
+    title: ".NET 10 Microservices — Weather Alert Platform",
+    description:
+      "Designed and developed a microservices-based weather alert platform using .NET 10. The application is composed of independent Weather, Alert and Notification services communicating asynchronously through RabbitMQ. The entire environment is containerized with Docker and Docker Compose, with PostgreSQL and Entity Framework Core for data persistence. The project demonstrates experience with microservices architecture, event-driven communication, REST APIs, containerization, service decoupling, and inter-service communication.",
+    ghLink: "https://github.com/AlessandroPozzi96/weather-alert-microservices",
+  },
+  {
+    imgPath: AzureDevOpsPipeline,
+    isBlog: false,
+    title: "End-to-End CI/CD Pipeline for a .NET Minimal API",
+    description:
+      "Developed and deployed a .NET Minimal REST API with a fully automated Azure DevOps CI/CD pipeline. Created reusable YAML-based multi-stage pipelines to restore NuGet packages, build the application, execute automated tests, publish build artifacts, and deploy seamlessly across Test and Production environments, following modern DevOps best practices.",
+    ghLink: "https://github.com/AlessandroPozzi96/AzureDevOpsPipelines_Training",
+  },
   {
     imgPath: NotesManager,
     isBlog: false,
