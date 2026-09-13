@@ -5,6 +5,7 @@ import RedCross from "../Assets/Projects/RedCross.png";
 import DonDeSang from "../Assets/Projects/DonDeSang.png";
 import AzureDevOpsPipeline from "../Assets/Projects/AzurePipeline.png";
 import Microservices from "../Assets/Projects/MicroServices.png";
+import TripWise from "../Assets/Projects/TripWise.svg";
 
 import {
   DiJavascript1,
@@ -31,7 +32,15 @@ import { TbBrandVisualStudio } from "react-icons/tb";
 import { VscAzureDevops } from "react-icons/vsc";
 
 export const projects = [
-    {
+  {
+    imgPath: TripWise,
+    isBlog: false,
+    title: "TripWise",
+    description:
+      "TripWise is a modern travel management application built with a microservices architecture using .NET, React, PostgreSQL, RabbitMQ, Docker, and JWT authentication. It implements CQRS, the repository pattern, REST APIs, and event-driven communication to manage trips, budgets, and notifications in a scalable and loosely coupled system.",
+    ghLink: "https://github.com/AlessandroPozzi96/TripWise.git",
+  },
+  {
     imgPath: Microservices,
     isBlog: false,
     title: ".NET 10 Microservices — Weather Alert Platform",
